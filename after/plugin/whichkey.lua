@@ -1,5 +1,5 @@
 local wk = require("which-key")
-local tele_builtin = require('telescope.builtin')
+local telescope = require('telescope.builtin')
 
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "[U]ndoTree toggle" })
 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {})
@@ -11,18 +11,21 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 wk.register({
     p = {
         name = "[P]roject (respects .gitgnore)",
-        f = { function() tele_builtin.find_files() end, "[F]ind file" },
+        f = { function() telescope.find_files() end, "[F]ind file" },
         g = { function()
-            tele_builtin.live_grep()
+            telescope.live_grep()
         end, "Live[G]rep in project"
         }
     },
     l = {
         name = "[L]SP commands",
-        d = { function() vim.lsp.buf.definition() end, "[G]o to definition" }
+        d = { function() vim.lsp.buf.definition() end, "[G]o to definition" },
+        s = {
+            function() telescope.lsp_document_symbols() end, "list [S]ymbols"
+        }
     },
     b = {
         name = "[B]uffers",
-        b = { function() tele_builtin.buffers() end, "List [B]uffers" }
+        b = { function() telescope.buffers() end, "List [B]uffers" }
     }
 }, { prefix = "<leader>" })
