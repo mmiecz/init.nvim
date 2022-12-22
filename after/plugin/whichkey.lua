@@ -29,6 +29,9 @@ wk.register({
     },
     b = {
         name = "[B]uffers",
-        b = { function() telescope.buffers() end, "List [B]uffers" }
+        b = { function() telescope.buffers() end, "List [B]uffers" },
+        p = { "<cmd>bprevious<cr>", "[P]revious Buffer" },
+        n = { "<cmd>bnext<cr>", "[N]ext Buffer" },
+        d = { "<cmd>bdelete<cr>", "[D]elete Current Buffer" }
     }
 }, { prefix = "<leader>" })
