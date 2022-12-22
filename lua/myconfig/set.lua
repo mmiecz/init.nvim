@@ -27,8 +27,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
-
+-- vim.opt.colorcolumn = "80" ugly line in the middle of the screen
 
 --neovim tree 
 vim.g.loaded_netrw = 1

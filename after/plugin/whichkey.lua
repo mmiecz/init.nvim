@@ -22,6 +22,9 @@ wk.register({
         d = { function() vim.lsp.buf.definition() end, "[G]o to definition" },
         s = {
             function() telescope.lsp_document_symbols() end, "list [S]ymbols"
+        },
+        f = {
+            function() vim.lsp.buf.format() end, "[F]ormat code"
         }
     },
     b = {
