@@ -62,4 +62,18 @@ return require('packer').startup(function(use)
         end
     }
     use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
+    use {
+        'MrcJkb/haskell-tools.nvim',
+        requires = {
+            'neovim/nvim-lspconfig',
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim', -- optional
+        },
+    }
+    use('Olical/conjure')
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+    use('phaazon/hop.nvim')
 end)

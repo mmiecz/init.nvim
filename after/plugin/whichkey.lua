@@ -1,6 +1,9 @@
 local wk = require("which-key")
 local telescope = require('telescope.builtin')
 
+--Setup local leader
+vim.g.maplocalleader=","
+
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "[U]ndoTree toggle" })
 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {})
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "LSP [F]ormat" })
@@ -35,3 +38,5 @@ wk.register({
         d = { "<cmd>bdelete<cr>", "[D]elete Current Buffer" }
     }
 }, { prefix = "<leader>" })
+
+
